@@ -1,0 +1,145 @@
+inherited cadUsuarioF: TcadUsuarioF
+  Left = 1142
+  Height = 276
+  Top = 114
+  Caption = 'Cadastro de Usuário'
+  ClientHeight = 276
+  OnShow = FormShow
+  inherited PageControl: TPageControl
+    Height = 276
+    inherited tabPesquisa: TTabSheet
+      ClientHeight = 248
+      inherited Panel1: TPanel
+        inherited btnBuscar: TBitBtn
+          OnClick = btnBuscarClick
+        end
+      end
+      inherited Panel2: TPanel
+        Top = 198
+        inherited btnNovo: TBitBtn
+          OnClick = btnNovoClick
+        end
+      end
+      inherited DBGrid1: TDBGrid
+        Height = 148
+        Columns = <        
+          item
+            PickList.Strings = (            )
+            Title.Caption = 'ID'
+            Width = 90
+            FieldName = 'id'
+          end        
+          item
+            PickList.Strings = (            )
+            Title.Caption = 'USUÁRIO'
+            Width = 150
+            FieldName = 'usuario'
+          end        
+          item
+            PickList.Strings = (            )
+            Title.Caption = 'NOME'
+            Width = 200
+            FieldName = 'nome_completo'
+          end        
+          item
+            PickList.Strings = (            )
+            Title.Caption = 'SENHA'
+            Width = 100
+            FieldName = 'senha'
+          end>
+        DataSource = dsUsuario
+        ReadOnly = True
+        OnDblClick = DBGrid1DblClick
+      end
+    end
+    inherited tabCadastro: TTabSheet
+      ClientHeight = 248
+      inherited Panel3: TPanel
+        Top = 198
+        inherited btnGravar: TBitBtn
+          OnClick = btnGravarClick
+        end
+        inherited btnExcluir: TBitBtn
+          OnClick = btnExcluirClick
+        end
+      end
+      object Label2: TLabel[1]
+        Left = 123
+        Height = 15
+        Top = 84
+        Width = 17
+        Caption = 'ID: '
+        ParentColor = False
+      end
+      object Label3: TLabel[2]
+        Left = 94
+        Height = 15
+        Top = 128
+        Width = 46
+        Caption = 'Usuário: '
+        ParentColor = False
+      end
+      object Label4: TLabel[3]
+        Left = 48
+        Height = 15
+        Top = 226
+        Width = 92
+        Caption = 'Nome Completo:'
+        ParentColor = False
+      end
+      object Label5: TLabel[4]
+        Left = 102
+        Height = 15
+        Top = 175
+        Width = 38
+        Caption = 'Senha: '
+        ParentColor = False
+      end
+      object edtIdUsuario: TDBEdit[5]
+        Left = 158
+        Height = 23
+        Top = 80
+        Width = 80
+        DataField = 'id'
+        DataSource = dsUsuario
+        MaxLength = 0
+        TabOrder = 1
+      end
+      object edtUsuario: TDBEdit[6]
+        Left = 158
+        Height = 23
+        Top = 124
+        Width = 362
+        DataField = 'usuario'
+        DataSource = dsUsuario
+        MaxLength = 0
+        TabOrder = 2
+      end
+      object edtSenhaUsuario: TDBEdit[7]
+        Left = 158
+        Height = 23
+        Top = 171
+        Width = 362
+        DataField = 'senha'
+        DataSource = dsUsuario
+        MaxLength = 0
+        TabOrder = 3
+      end
+      object edtNomeUsuario: TDBEdit[8]
+        Left = 158
+        Height = 23
+        Top = 222
+        Width = 362
+        DataField = 'nome_completo'
+        DataSource = dsUsuario
+        MaxLength = 0
+        TabOrder = 4
+      end
+    end
+  end
+  object dsUsuario: TDataSource[1]
+    DataSet = DataModuleF.qryUsuario
+    Left = 280
+    Top = 32
+  end
+end

@@ -1,0 +1,73 @@
+object pesqProdF: TpesqProdF
+  Left = 1180
+  Height = 240
+  Top = 117
+  Width = 527
+  Caption = 'Pesquisa de Produtos'
+  ClientHeight = 240
+  ClientWidth = 527
+  OnClose = FormClose
+  OnShow = FormShow
+  Position = poDesktopCenter
+  LCLVersion = '2.2.6.0'
+  object Panel1: TPanel
+    Left = 0
+    Height = 50
+    Top = 0
+    Width = 527
+    Align = alTop
+    ClientHeight = 50
+    ClientWidth = 527
+    TabOrder = 0
+    object Label1: TLabel
+      Left = 32
+      Height = 15
+      Top = 17
+      Width = 42
+      Caption = 'Código:'
+      ParentColor = False
+    end
+    object btnBuscar: TBitBtn
+      Left = 184
+      Height = 30
+      Top = 9
+      Width = 75
+      Caption = 'Buscar'
+      OnClick = btnBuscarClick
+      TabOrder = 0
+    end
+    object edtBuscar: TEdit
+      Left = 88
+      Height = 23
+      Top = 13
+      Width = 80
+      TabOrder = 1
+    end
+  end
+  object DBGrid1: TDBGrid
+    Left = 0
+    Height = 190
+    Top = 50
+    Width = 527
+    Align = alClient
+    Color = clWindow
+    Columns = <    
+      item
+        Title.Caption = 'ID'
+        FieldName = 'produtoid'
+      end    
+      item
+        Title.Caption = 'DESCRIÇÃO'
+        Width = 250
+        FieldName = 'ds_produto'
+      end>
+    DataSource = dsPesqProd
+    TabOrder = 1
+    OnDblClick = DBGrid1DblClick
+  end
+  object dsPesqProd: TDataSource
+    DataSet = DataModuleF.qryProduto
+    Left = 448
+    Top = 176
+  end
+end

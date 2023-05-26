@@ -1,0 +1,8 @@
+inherited impressaoOrcamentoF: TimpressaoOrcamentoF
+  Left = 1368
+  Top = 227
+  Caption = 'Relatorio de Itens'
+  inherited btnAbrirRelatorio: TBitBtn
+    Caption = 'Abrir Relatório de Item do Orcamento'
+  end
+end

@@ -1,0 +1,13 @@
+inherited relOrcamentosF: TrelOrcamentosF
+  Left = 966
+  Top = 392
+  Caption = 'Relatorio de Orçamentos'
+  inherited btnAbrirRelatorio: TBitBtn
+    Caption = 'Abrir Relatório de Orçamentos'
+    OnClick = btnAbrirRelatorioClick
+  end
+  inherited frDBClientes: TfrDBDataSet
+    DataSet = DataModuleF.qryOrcamento
+    OnCheckEOF = nil
+  end
+end

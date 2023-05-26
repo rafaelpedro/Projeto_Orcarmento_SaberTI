@@ -1,0 +1,13 @@
+inherited relCategoriasF: TrelCategoriasF
+  Left = 971
+  Top = 119
+  Caption = 'Relatorio de Categorias'
+  inherited btnAbrirRelatorio: TBitBtn
+    Caption = 'Abrir Relatório de Categorias'
+    OnClick = btnAbrirRelatorioClick
+  end
+  inherited frDBClientes: TfrDBDataSet
+    DataSet = DataModuleF.qryCategoria
+    OnCheckEOF = nil
+  end
+end

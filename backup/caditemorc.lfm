@@ -1,0 +1,157 @@
+object cadItemOrcF: TcadItemOrcF
+  Left = 1347
+  Height = 282
+  Top = 117
+  Width = 376
+  Caption = 'Adicionar Item'
+  ClientHeight = 282
+  ClientWidth = 376
+  OnShow = FormShow
+  Position = poDesktopCenter
+  LCLVersion = '2.2.6.0'
+  object Label1: TLabel
+    Left = 24
+    Height = 15
+    Top = 23
+    Width = 45
+    Caption = 'Produto'
+    Font.CharSet = ANSI_CHARSET
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label2: TLabel
+    Left = 24
+    Height = 15
+    Top = 91
+    Width = 119
+    Caption = 'Descrição do Produto'
+    Font.CharSet = ANSI_CHARSET
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label3: TLabel
+    Left = 24
+    Height = 15
+    Top = 160
+    Width = 24
+    Caption = 'Qtd.'
+    Font.CharSet = ANSI_CHARSET
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label4: TLabel
+    Left = 168
+    Height = 15
+    Top = 160
+    Width = 48
+    Caption = 'Vlr. Unit.'
+    Font.CharSet = ANSI_CHARSET
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label5: TLabel
+    Left = 304
+    Height = 15
+    Top = 160
+    Width = 48
+    Caption = 'Vlr. Total'
+    Font.CharSet = ANSI_CHARSET
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object btnInserir: TBitBtn
+    Left = 152
+    Height = 30
+    Top = 224
+    Width = 80
+    Caption = 'Inserir'
+    OnClick = btnInserirClick
+    TabOrder = 0
+  end
+  object btnCancelar: TBitBtn
+    Left = 272
+    Height = 30
+    Top = 224
+    Width = 80
+    Caption = 'Cancelar'
+    OnClick = btnCancelarClick
+    TabOrder = 1
+  end
+  object DBEdit1: TDBEdit
+    Left = 24
+    Height = 23
+    Top = 40
+    Width = 80
+    DataField = 'produtoid'
+    DataSource = orcamentoF.dsOrcamentoItem
+    MaxLength = 0
+    TabOrder = 2
+  end
+  object DBEdit2: TDBEdit
+    Left = 24
+    Height = 23
+    Top = 116
+    Width = 328
+    DataField = 'produtodesc'
+    DataSource = orcamentoF.dsOrcamentoItem
+    MaxLength = 0
+    TabOrder = 3
+  end
+  object DBEdit3: TDBEdit
+    Left = 24
+    Height = 23
+    Top = 184
+    Width = 80
+    DataField = 'qt_produto'
+    DataSource = orcamentoF.dsOrcamentoItem
+    MaxLength = 0
+    TabOrder = 4
+    OnChange = DBEdit3Change
+  end
+  object DBEdit4: TDBEdit
+    Left = 152
+    Height = 23
+    Top = 184
+    Width = 80
+    DataField = 'vl_unitario'
+    DataSource = orcamentoF.dsOrcamentoItem
+    MaxLength = 0
+    TabOrder = 5
+    OnChange = DBEdit4Change
+  end
+  object DBEdit5: TDBEdit
+    Left = 272
+    Height = 23
+    Top = 184
+    Width = 80
+    DataField = 'vl_total'
+    DataSource = orcamentoF.dsOrcamentoItem
+    EditMask = '########'
+    MaxLength = 8
+    TabOrder = 6
+    OnChange = DBEdit5Change
+  end
+  object SpeedButton1: TSpeedButton
+    Left = 112
+    Height = 22
+    Top = 40
+    Width = 23
+    Caption = '...'
+    OnClick = SpeedButton1Click
+  end
+end

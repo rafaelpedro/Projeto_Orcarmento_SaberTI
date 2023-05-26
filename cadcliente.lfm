@@ -1,0 +1,164 @@
+inherited cadClienteF: TcadClienteF
+  Left = 422
+  Height = 446
+  Top = 227
+  Width = 592
+  Caption = 'Cadastro de Cliente'
+  ClientHeight = 446
+  ClientWidth = 592
+  OnShow = FormShow
+  inherited PageControl: TPageControl
+    Height = 446
+    Width = 592
+    inherited tabPesquisa: TTabSheet
+      ClientHeight = 418
+      ClientWidth = 584
+      inherited Panel1: TPanel
+        Width = 584
+        ClientWidth = 584
+        inherited btnBuscar: TBitBtn
+          OnClick = btnBuscarClick
+        end
+      end
+      inherited Panel2: TPanel
+        Top = 368
+        Width = 584
+        ClientWidth = 584
+        inherited btnNovo: TBitBtn
+          OnClick = btnNovoClick
+        end
+        inherited Panel5: TPanel
+          Left = 413
+        end
+      end
+      inherited DBGrid1: TDBGrid
+        Height = 318
+        Width = 584
+        Columns = <        
+          item
+            PickList.Strings = (            )
+            Title.Caption = 'ID'
+            Width = 100
+            FieldName = 'clienteid'
+          end        
+          item
+            PickList.Strings = (            )
+            Title.Caption = 'TIPO'
+            Width = 100
+            FieldName = 'tipo_cliente'
+          end        
+          item
+            PickList.Strings = (            )
+            Title.Caption = 'CPF / CNPJ'
+            Width = 200
+            FieldName = 'cpf_cnpj_cliente'
+          end        
+          item
+            PickList.Strings = (            )
+            Title.Caption = 'NOME'
+            Width = 400
+            FieldName = 'nome_cliente'
+          end>
+        DataSource = dsCliente
+        ReadOnly = True
+        OnDblClick = DBGrid1DblClick
+      end
+    end
+    inherited tabCadastro: TTabSheet
+      ClientHeight = 418
+      ClientWidth = 584
+      inherited Panel3: TPanel
+        Top = 368
+        Width = 584
+        ClientWidth = 584
+        inherited btnGravar: TBitBtn
+          OnClick = btnGravarClick
+        end
+        inherited btnExcluir: TBitBtn
+          Left = 168
+          OnClick = btnExcluirClick
+        end
+        inherited Panel4: TPanel
+          Left = 413
+        end
+      end
+      object Label2: TLabel[1]
+        Left = 112
+        Height = 15
+        Top = 64
+        Width = 16
+        Caption = 'Id: '
+        ParentColor = False
+      end
+      object Label3: TLabel[2]
+        Left = 89
+        Height = 15
+        Top = 107
+        Width = 39
+        Caption = 'Nome: '
+        ParentColor = False
+      end
+      object Label4: TLabel[3]
+        Left = 47
+        Height = 15
+        Top = 154
+        Width = 81
+        Caption = 'C.P.F / C.N.P.J: '
+        ParentColor = False
+      end
+      object Label5: TLabel[4]
+        Left = 102
+        Height = 15
+        Top = 198
+        Width = 26
+        Caption = 'Tipo:'
+        ParentColor = False
+      end
+      object edtIdCliente: TDBEdit[5]
+        Left = 154
+        Height = 23
+        Top = 60
+        Width = 56
+        DataField = 'clienteid'
+        DataSource = dsCliente
+        MaxLength = 0
+        TabOrder = 1
+      end
+      object edtNomeCliente: TDBEdit[6]
+        Left = 154
+        Height = 23
+        Top = 103
+        Width = 432
+        DataField = 'nome_cliente'
+        DataSource = dsCliente
+        MaxLength = 0
+        TabOrder = 2
+      end
+      object edtCpfCnpjCliente: TDBEdit[7]
+        Left = 154
+        Height = 23
+        Top = 150
+        Width = 432
+        DataField = 'cpf_cnpj_cliente'
+        DataSource = dsCliente
+        MaxLength = 0
+        TabOrder = 3
+      end
+      object edtTipoCliente: TDBEdit[8]
+        Left = 154
+        Height = 23
+        Top = 194
+        Width = 432
+        DataField = 'tipo_cliente'
+        DataSource = dsCliente
+        MaxLength = 0
+        TabOrder = 4
+      end
+    end
+  end
+  object dsCliente: TDataSource[1]
+    DataSet = DataModuleF.qryCliente
+    Left = 520
+    Top = 336
+  end
+end

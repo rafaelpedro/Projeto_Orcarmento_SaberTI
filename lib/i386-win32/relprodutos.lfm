@@ -1,0 +1,14 @@
+inherited relProdutosF: TrelProdutosF
+  Left = 1242
+  Top = 201
+  Caption = 'Relatorio de Produtos'
+  OnClose = FormClose
+  inherited btnAbrirRelatorio: TBitBtn
+    Caption = 'Abrir Relatório de Produtos'
+    OnClick = btnAbrirRelatorioClick
+  end
+  inherited frDBClientes: TfrDBDataSet
+    DataSet = DataModuleF.qryProduto
+    OnCheckEOF = frDBClientesCheckEOF
+  end
+end

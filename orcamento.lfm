@@ -1,0 +1,436 @@
+inherited orcamentoF: TorcamentoF
+  Left = 454
+  Top = 115
+  Width = 1116
+  Caption = 'Orçamento'
+  ClientWidth = 1116
+  OnClose = FormClose
+  OnShow = FormShow
+  inherited PageControl: TPageControl
+    Width = 1116
+    ActivePage = tabCadastro
+    TabIndex = 1
+    OnChange = PageControlChange
+    inherited tabPesquisa: TTabSheet
+      ClientWidth = 1108
+      inherited Panel1: TPanel
+        Width = 1108
+        ClientWidth = 1108
+        inherited btnBuscar: TBitBtn
+          OnClick = btnBuscarClick
+        end
+      end
+      inherited Panel2: TPanel
+        Width = 1108
+        ClientWidth = 1108
+        inherited btnNovo: TBitBtn
+          OnClick = btnNovoClick
+        end
+        inherited Panel5: TPanel
+          Left = 937
+        end
+      end
+      inherited DBGrid1: TDBGrid
+        Width = 1108
+        Columns = <        
+          item
+            PickList.Strings = (            )
+            Title.Caption = 'ID'
+            Width = 90
+            FieldName = 'orcamentoid'
+          end        
+          item
+            PickList.Strings = (            )
+            Title.Caption = 'ID CLIENTE'
+            Width = 90
+            FieldName = 'clienteid'
+          end        
+          item
+            PickList.Strings = (            )
+            Title.Caption = 'DATA DO ORÇAMENTO'
+            Width = 150
+            FieldName = 'dt_orcamento'
+          end        
+          item
+            PickList.Strings = (            )
+            Title.Caption = 'DT VALIDADE DO ORCAMENTO'
+            Width = 150
+            FieldName = 'dt_validade_orcamento'
+          end        
+          item
+            PickList.Strings = (            )
+            Title.Caption = 'VALOR TOTAL'
+            Width = 100
+            FieldName = 'vl_total_orcamento'
+          end>
+        DataSource = dsOrcamento
+        ReadOnly = True
+        OnDblClick = DBGrid1DblClick
+      end
+    end
+    inherited tabCadastro: TTabSheet
+      ClientWidth = 1108
+      inherited Panel3: TPanel
+        Width = 1108
+        ClientWidth = 1108
+        inherited btnGravar: TBitBtn
+          OnClick = btnGravarClick
+        end
+        inherited btnExcluir: TBitBtn
+          OnClick = btnExcluirClick
+        end
+        inherited Panel4: TPanel
+          Left = 937
+        end
+        object btnImprimir: TBitBtn[3]
+          Left = 248
+          Height = 30
+          Top = 8
+          Width = 88
+          Caption = 'Imprimir'
+          Glyph.Data = {
+            66010000424D6601000000000000760000002800000014000000140000000100
+            040000000000F000000000000000000000001000000010000000000000000000
+            8000008000000080800080000000800080008080000080808000C0C0C0000000
+            FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00DDDDDDDDDDDD
+            DDDDDDDD0000DDDDDDDDDDDDDDDDDDDD0000DD000DDDDDDDDDD000DD0000D000
+            000000000000000D0000D0F8888888888888880D0000D0F8888888888888880D
+            0000D0F8888888822899880D0000D0FFFFFFFFFFFFFFFF0D0000D70077777777
+            7777007D0000DDD00000000000000DDD0000DDD00FFFFFFFFFF00DDD0000DDDD
+            0F00000000F0DDDD0000DDDD0FFFFFFFFFF0DDDD0000DDDD0F00000000F0DDDD
+            0000DDDD0FFFFFFFFFF0DDDD0000DDDD0F00FFFFFFF0DDDD0000DDDD0FFFFFFF
+            FFF0DDDD0000DDDD000000000000DDDD0000DDDDDDDDDDDDDDDDDDDD0000DDDD
+            DDDDDDDDDDDDDDDD0000
+          }
+          OnClick = btnImprimirClick
+          TabOrder = 3
+        end
+      end
+      object Panel6: TPanel[1]
+        Left = 0
+        Height = 128
+        Top = 0
+        Width = 1108
+        Align = alTop
+        ClientHeight = 128
+        ClientWidth = 1108
+        TabOrder = 1
+        object Label2: TLabel
+          Left = 24
+          Height = 15
+          Top = 16
+          Width = 14
+          Caption = 'ID:'
+          ParentColor = False
+        end
+        object Label3: TLabel
+          Left = 24
+          Height = 15
+          Top = 64
+          Width = 40
+          Caption = 'Cliente:'
+          ParentColor = False
+        end
+        object Label4: TLabel
+          Left = 200
+          Height = 15
+          Top = 16
+          Width = 81
+          Caption = 'Dt. Orçamento:'
+          ParentColor = False
+        end
+        object Label5: TLabel
+          Left = 408
+          Height = 15
+          Top = 16
+          Width = 65
+          Caption = 'Dt. Validade:'
+          ParentColor = False
+        end
+        object Label6: TLabel
+          Left = 576
+          Height = 32
+          Top = 16
+          Width = 190
+          Caption = 'Total Orçamento'
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -24
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object DBEdit1: TDBEdit
+          Left = 24
+          Height = 23
+          Top = 32
+          Width = 88
+          DataField = 'orcamentoid'
+          DataSource = dsOrcamento
+          MaxLength = 0
+          TabOrder = 0
+        end
+        object DBEdit2: TDBEdit
+          Left = 24
+          Height = 23
+          Top = 88
+          Width = 88
+          DataField = 'clienteid'
+          DataSource = dsOrcamento
+          MaxLength = 0
+          TabOrder = 1
+        end
+        object DBEdit3: TDBEdit
+          Left = 200
+          Height = 23
+          Top = 32
+          Width = 111
+          DataField = 'dt_orcamento'
+          DataSource = dsOrcamento
+          MaxLength = 0
+          TabOrder = 2
+        end
+        object DBEdit4: TDBEdit
+          Left = 408
+          Height = 23
+          Top = 32
+          Width = 112
+          DataField = 'dt_validade_orcamento'
+          DataSource = dsOrcamento
+          MaxLength = 0
+          TabOrder = 3
+        end
+        object DBEdit5: TDBEdit
+          Left = 600
+          Height = 33
+          Top = 48
+          Width = 147
+          DataField = 'vl_total_orcamento'
+          DataSource = dsOrcamento
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -19
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          Font.Style = [fsBold]
+          MaxLength = 0
+          ParentFont = False
+          TabOrder = 4
+        end
+        object btnAdicionarItem: TBitBtn
+          Left = 808
+          Height = 30
+          Top = 64
+          Width = 112
+          Caption = 'Add Item'
+          Glyph.Data = {
+            76060000424D7606000000000000360400002800000018000000180000000100
+            08000000000040020000220B0000220B00000001000000010000006B00000073
+            080008730800087B080008731000087B100008841000088C1000089410001084
+            180008941800089C180008A5180008AD180010AD210018AD290021AD310021AD
+            390021BD390029AD4A0029BD4A0031BD4A0029C64A0031AD520039BD5A0039C6
+            5A0039BD630042CE6B004AD66B004AD67B0052DE84005AE78C005AEF940010A5
+            D60018A5D60021A5D60021ADD60029ADD60029ADDE0031ADDE0029B5DE0031B5
+            DE0039B5DE0042B5DE0039BDDE004ABDDE0039BDE70042BDE7005ABDE70063BD
+            E7004AC6E70052C6E7005AC6E70063C6E7006BC6E70073C6E70052CEE7005ACE
+            E70073CEE7007BCEE70052CEEF005ACEEF007BCEEF0084CEEF008CCEEF005AD6
+            EF0063D6EF0084D6EF0094D6EF0063DEEF005ACEF70063D6F7006BD6F70063DE
+            F70073DEF700ADDEF70073E7F7007BE7F70094E7F700BDE7F70094EFF700BDEF
+            F700FF00FF006BDEFF0073DEFF007BE7FF0084E7FF007BEFFF0084EFFF008CEF
+            FF009CEFFF00ADEFFF0084F7FF008CF7FF0094F7FF009CF7FF00A5F7FF00ADF7
+            FF00B5F7FF00C6F7FF00CEF7FF008CFFFF0094FFFF009CFFFF00A5FFFF00B5FF
+            FF00BDFFFF00C6FFFF00CEFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+            FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+            FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+            FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+            FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+            FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+            FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+            FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+            FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+            FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+            FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+            FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+            FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+            FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+            FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+            FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+            FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+            FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+            FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00525252525252
+            52525252525252525252525252525252525252232323342F2523225252525252
+            5252525252525252525252224B69675E594D48332B2523225252525252525252
+            52525221316C5D5E5E5E5E5E5D594A3D3229232222525252525252232B51675E
+            5E5E5E5D5D5D5E5E5959564227525252525252253444695D5E5E5E5D5D595959
+            595959563D235252525252254D35635D5E5E5E5D5D5959595959594D4A2C5252
+            5252522550384F675E5E5E5D5D5959595959594A54422252525252255A453F6A
+            5D5E5E02040202025959594A4A59255252525225505D2D64685E0202090A0A0A
+            0502594A4A5F325252525225506741314F5163636A5F060B0C07024A4A5F4A22
+            525252255A665E4238343535374F61020B0E06024A5E5E2A525252255A665E67
+            665E5958422B4B63060E0B02485D5E41525252255A665E5E5E5E5E5E5E4D2F3B
+            040F0E025B6A6A5B255252255F665E5E5E5E5E5D5D5E59410211120236373B3F
+            2752522560665E5E5E5E5E5D5D02020204151502020202525252522562665E5E
+            5E5E5E5A5A021017181B191410100152525252223B6966665E5E5827272A0213
+            201E1C10110252525252525223434E4E5A60392152525200171F1F1804525252
+            52525252522223232525235252525252021A1D09525252525252525252525252
+            5252525252525252520509525252525252525252525252525252525252525252
+            5252525252525252525252525252525252525252525252525252525252525252
+            5252525252525252525252525252525252525252525252525252
+          }
+          OnClick = btnAdicionarItemClick
+          TabOrder = 5
+        end
+        object btnExcluirItem: TBitBtn
+          Left = 944
+          Height = 30
+          Top = 64
+          Width = 115
+          Caption = 'Excluir Item'
+          Glyph.Data = {
+            96060000424D9606000000000000360000002800000016000000180000000100
+            18000000000060060000C30E0000C30E00000000000000000000CCCCCCCCCCCC
+            CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCBFBF
+            BF9595959A9A9ACCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC0000CCCC
+            CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC85
+            85856161616060606767675E5E5EA8A8A8CCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+            0000CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCBBBBBBA2A2A2
+            4141417B7B7B8E8E8E9C9C9C8181817F7F7F5858585E5E5EBCBCBCCCCCCCCCCC
+            CCCCCCCC0000CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC7B7B7B6868
+            68535353ACACACB3B3B3BFBFBF9D9D9D7F7F7F7F7F7F7F7F7F747474787878CC
+            CCCCCCCCCCCCCCCC0000CCCCCCCCCCCCCCCCCCCCCCCCC3C3C39999994646467C
+            7C7C8E8E8EB2B2B2BFBFBFBFBFBFBFBFBF9D9D9D7F7F7F7F7F7F7F7F7F636363
+            787878CCCCCCCCCCCCCCCCCC0000CCCCCCCCCCCCCCCCCCC6C6C6686868616161
+            A0A0A0B5B5B57D947DA5B0A5BFBFBFBFBFBFBFBFBF9D9D9D7F7F7F7F7F7F7F7F
+            7F7171716C6C6CC1C1C1CCCCCCCCCCCC0000CCCCCCCCCCCCCCCCCCBEBEBEB4B4
+            B4AFAFAFBFBFBF849484167F16328F3241954192AF92BFBFBF9D9D9D7F7F7F7F
+            7F7F7F7F7F8282824B4B4BAEAEAECCCCCCCCCCCC0000CCCCCCCCCCCCCCCCCCBE
+            BEBEB8B9B86DA06D84A784389038007F00248B242A892A118011B2BAB29D9D9D
+            7F7F7F7F7F7F7F7F7F7F7F7F444444AEAEAECCCCCCCCCCCC0000CCCCCCCCCCCC
+            C9C9C9B9B9B96EA26E338933B3B3B3ADB8AD34903493B093B4B4B4388A38B2BA
+            B29D9D9D7F7F7F7F7F7F7F7F7F7F7F7F707070757575CCCCCCCCCCCC0000CCCC
+            CCCCCCCCC7C7C7B5B5B5318F313D933DB0BAB0BCBEBCAFB9AFB7BCB7BFBFBF52
+            9A52B3BAB39D9D9D7F7F7F7F7F7F7F7F7F7F7F7F8383833E3E3ECCCCCCCCCCCC
+            0000CCCCCCCCCCCCC7C7C7B5B5B5318F31238A232A8C2AACB8ACBFBFBF80A980
+            6EA46E6EA46EB9BCB99D9D9D7F7F7F7F7F7F7F7F7F7F7F7F7F7F7F3D3D3DCCCC
+            CCCCCCCC0000CCCCCCCCCCCCB9B9B9BDBDBD92AF92007F00007F00ACB8ACBFBF
+            BF8CAD8C007F00007F00B2BAB29D9D9D7F7F7F7F7F7F7F7F7F7F7F7F7F7F7F79
+            79797F7F7FCCCCCC0000CCCCCCCCCCCCB3B3B3BFBFBF5B9D5B3892383892387E
+            A87E86AC861E881E138513138513B2BAB29D9D9D7F7F7F7F7F7F7F7F7F7F7F7F
+            7F7F7F717171616161CCCCCC0000CCCCCCCCCCCCB3B3B3BFBFBFBFBFBFBFBFBF
+            BFBFBF719F71267F260781078CAD8CA4C6A4DFE2DFD7D7D7C3C3C37F7F7F7F7F
+            7F7F7F7F7F7F7F717171616161CCCCCC0000CCCCCCBBBBBBBDBDBDBFBFBFBFBF
+            BFBFBFBFBFBFBFBDBDBDB6BDB6B8C5B8E0E0E0B1B1B19D9D9DD2D2D2CBCBCBE5
+            E5E5E5E5E59999999797978484846565659B9B9B0000CCCCCCBABABABCBCBCBF
+            BFBFBFBFBFBFBFBFBFBFBFDADADACFCFCFBCBCBC898989B3B3B3A0A0A0FFFFFF
+            E4E4E4DEDEDEC8C8C8DEDEDEE0E0E0C1C1C17575759696960000CBCBCBB9B9B9
+            BCBCBCBFBFBFC1C1C1CECECEE8E8E8AAAAAAC1C1C1DADADA959595A4A4A4DCDC
+            DCFFFFFFFFFFFFFFFFFFF4F4F4C2C2C2BDBDBDEBEBEB8888889999990000C3C3
+            C3B8B8B8C2C2C2D6D6D6D1D1D1C4C4C4909090F2F2F2FFFFFFD7D7D7ACACACF0
+            F0F0999999E8E8E8FFFFFFFFFFFFFFFFFFCCCCCCAAAAAAB9B9B9C0C0C0CCCCCC
+            0000C3C3C3CFCFCFDEDEDEABABABC8C8C8E1E1E1B0B0B0F2F2F2D6D6D6ADADAD
+            F0F0F0FFFFFF909090A9A9A9EEEEEEFFFFFFC5C5C5B1B1B1C1C1C1CACACACCCC
+            CCCCCCCC0000C3C3C3D4D4D4A8A8A87F7F7FC6C6C6FFFFFFB0B0B0DADADAA6A6
+            A6F0F0F0FFFFFFEAEAEAB7B7B7CBCBCBD2D2D2C8C8C8DDDDDDB6B6B6CCCCCCCC
+            CCCCCCCCCCCCCCCC0000C7C7C7BCBCBCC8C8C8B4B4B4C2C2C2BBBBBB959595B5
+            B5B5DFDFDFFFFFFFFFFFFFACACACF6F6F6FFFFFFCECECED9D9D9ECECECB6B6B6
+            CCCCCCCCCCCCCCCCCCCCCCCC0000CCCCCCC8C8C8C4C4C4BABABABEBEBEC6C6C6
+            DEDEDE959595A1A1A1E1E1E1F6F6F6C2C2C2BDBDBDC8C8C8EAEAEAC9C9C9B8B8
+            B8C7C7C7CCCCCCCCCCCCCCCCCCCCCCCC0000CCCCCCCCCCCCCCCCCCCCCCCCCBCB
+            CBBABABABABABAC3C3C3CDCDCDBBBBBBBBBBBBB3B3B3CACACAC2C2C2BABABAC1
+            C1C1CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC0000CCCCCCCCCCCCCCCCCCCC
+            CCCCCCCCCCCCCCCCCCCCCCC4C4C4C3C3C3CACACAC8C8C8C3C3C3CBCBCBCCCCCC
+            CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC0000
+          }
+          OnClick = btnExcluirItemClick
+          TabOrder = 6
+        end
+        object lblDescrCli: TLabel
+          Left = 168
+          Height = 15
+          Top = 96
+          Width = 56
+          Caption = 'lblDescrCli'
+          ParentColor = False
+        end
+        object SpeedButton1: TSpeedButton
+          Left = 128
+          Height = 22
+          Top = 89
+          Width = 23
+          Caption = '...'
+          OnClick = SpeedButton1Click
+        end
+      end
+      object DBGrid2: TDBGrid[2]
+        Left = 0
+        Height = 315
+        Top = 128
+        Width = 1108
+        Align = alClient
+        Color = clWindow
+        Columns = <        
+          item
+            Title.Caption = 'ID ORÇAMENTO'
+            Width = 100
+            FieldName = 'orcamentoid'
+          end        
+          item
+            Title.Caption = 'ID ITEM'
+            FieldName = 'orcamentoitemid'
+          end        
+          item
+            Title.Caption = 'ID PRODUTO'
+            Width = 80
+            FieldName = 'produtoid'
+          end        
+          item
+            Title.Caption = 'DESCRIÇÃO PRODUTO'
+            Width = 350
+            FieldName = 'produtodesc'
+          end        
+          item
+            Title.Caption = 'QUANTIDADE'
+            Width = 100
+            FieldName = 'qt_produto'
+          end        
+          item
+            Title.Caption = 'VL UNITÁRIO'
+            Width = 100
+            FieldName = 'vl_unitario'
+          end        
+          item
+            Title.Caption = 'VL TOTAL'
+            Width = 100
+            FieldName = 'vl_total'
+          end>
+        DataSource = dsOrcamentoItem
+        ReadOnly = True
+        TabOrder = 2
+      end
+    end
+  end
+  object dsOrcamento: TDataSource[1]
+    DataSet = DataModuleF.qryOrcamento
+    Left = 40
+    Top = 408
+  end
+  object dsOrcamentoItem: TDataSource[2]
+    DataSet = DataModuleF.qryOrcamentoItem
+    Left = 128
+    Top = 408
+  end
+  object frReportOrcamento: TfrReport[3]
+    Dataset = frDBOrcItens
+    InitialZoom = pzDefault
+    Options = []
+    PreviewButtons = [pbZoom, pbLoad, pbSave, pbPrint, pbFind, pbHelp, pbExit]
+    DataType = dtDataSet
+    Left = 40
+    Top = 344
+  end
+  object frDBOrcItens: TfrDBDataSet[4]
+    DataSet = DataModuleF.qryOrcamentoItem
+    Left = 128
+    Top = 344
+  end
+end
